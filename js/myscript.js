@@ -5,8 +5,8 @@ createApp ({
         return {
             contacts: [
                 {
-                    name: 'Michele',
-                    avatar: './img/avatar_1.png',
+                    name: 'Carlos',
+                    avatar: '../img/Carlos.jpeg',
                     visible: true,
                     messages: [
                         {
@@ -27,8 +27,8 @@ createApp ({
                     ],
                 },
                 {
-                    name: 'Fabio',
-                    avatar: './img/avatar_2.png',
+                    name: 'Charles',
+                    avatar: '../img/Charles.jpeg',
                     visible: true,
                     messages: [
                         {
@@ -49,8 +49,8 @@ createApp ({
                     ],
                 },
                 {
-                    name: 'Samuele',
-                    avatar: './img/avatar_3.png',
+                    name: 'Fernando',
+                    avatar: '../img/Fernando.jpeg',
                     visible: true,
                     messages: [
                         {
@@ -71,8 +71,8 @@ createApp ({
                     ],
                 },
                 {
-                    name: 'Alessandro B.',
-                    avatar: './img/avatar_4.png',
+                    name: 'George',
+                    avatar: '../img/George.jpeg',
                     visible: true,
                     messages: [
                         {
@@ -88,8 +88,8 @@ createApp ({
                     ],
                 },
                 {
-                    name: 'Alessandro L.',
-                    avatar: './img/avatar_5.png',
+                    name: 'Lando',
+                    avatar: '../img/Lando.jpeg',
                     visible: true,
                     messages: [
                         {
@@ -105,8 +105,8 @@ createApp ({
                     ],
                 },
                 {
-                    name: 'Claudia',
-                    avatar: './img/avatar_6.png',
+                    name: 'Lewis',
+                    avatar: '../img/Lewis.jpeg',
                     visible: true,
                     messages: [
                         {
@@ -127,8 +127,8 @@ createApp ({
                     ],
                 },
                 {
-                    name: 'Federico',
-                    avatar: './img/avatar_7.png',
+                    name: 'Michael',
+                    avatar: '../img/Michael.jpeg',
                     visible: true,
                     messages: [
                         {
@@ -144,8 +144,8 @@ createApp ({
                     ],
                 },
                 {
-                    name: 'Davide',
-                    avatar: './img/avatar_8.png',
+                    name: 'Oscar',
+                    avatar: '../img/Oscar.jpeg',
                     visible: true,
                     messages: [
                         {
@@ -166,6 +166,26 @@ createApp ({
                     ],
                 }
             ]
+        }
+    },
+    methods: {
+        showChat(index) {
+            this.selectedItem = index;
+        },
+
+        getLastDate(contact) {
+            const lastDate = contact.messages[contact.messages.length - 1];
+            return lastDate ? lastDate.date : '';
+        },
+
+        getTimeFromDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        },
+
+        getLastMessage(contact) {
+            const lastMessage = contact.messages[contact.messages.length - 1];
+            return lastMessage ? lastMessage.message : '';
         }
     }
 }).mount('#app');

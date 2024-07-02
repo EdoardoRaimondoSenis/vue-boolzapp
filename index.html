@@ -5,44 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous">
-    </script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="js/myscript.js"></script>
     <title>BoolzApp</title>
 </head>
-<body id="app">
-    <div class="backgreen"></div>
-    <main>
-        <div class="chatLeft">
-            <div class="profile">
-                <div class="profileLeft">
-                    <img class="imgProfile" src="img/io.jpeg" alt="">
-                    <span>Io</span>
+<body>
+    <div id="app">
+        <div class="backgreen"></div>
+        <main>
+            <div class="chatLeft">
+                <div class="profile">
+                    <div class="profileLeft">
+                        <img class="imgProfile" src="img/io.jpeg" alt="">
+                        <span>Io</span>
+                    </div>
+                    <div class="profileRight">
+                        <img class="chatIcons" src="img/circle-notch-solid.svg" alt="">
+                        <img class="chatIcons" src="img/message-regular.svg" alt="">
+                        <img class="chatIcon" src="img/ellipsis-vertical-solid.svg" alt="">
+                    </div>
                 </div>
-                <div class="profileRight">
-                    <img class="chatIcons" src="img/circle-notch-solid.svg" alt="">
-                    <img class="chatIcons" src="img/message-regular.svg" alt="">
-                    <img class="chatIcon" src="img/ellipsis-vertical-solid.svg" alt="">
+                <div class="notifications">
+                    <img class="bell" src="img/bell-slash-regular.svg" alt="">
+                    <div class="font">
+                        Ricevi notifiche di nuovi messaggi <br>
+                        <a class="not" href="">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+                <div class="search">
+                    <input class="inputSearch" type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+                <div class="chats">
+                    <div class="standard" v-for="(contact, index) in contacts" :key="index" @click="showChat(index)">
+                        <div class="nameMess">
+                            <div class="nameMessLeft">
+                                <img :src="contact.avatar" alt="">
+                                <div class="nameChat">{{contact.name}}</div>
+                                <div class="lastMess">{{getLastMessage(contact)}}</div>
+                            </div>
+                            <div class="nameMessRight">
+                                <span>{{getTimeFromDate(contact.messages[contact.messages.length - 1].date)}}</span>
+                            </div>
+                        </div>
+                      </div>
                 </div>
             </div>
-            <div class="notifications">
-                <img class="bell" src="img/bell-slash-regular.svg" alt="">
-                <div class="font">
-                    Ricevi notifiche di nuovi messaggi <br>
-                    <a class="not" href="">Attiva notifiche desktop</a>
+            <div class="chatright">
+                <div class="profile">
+                    <img  src="" alt="">
                 </div>
             </div>
-            <div class="search">
-                <input class="inputSearch" type="text" placeholder="Cerca o inizia una nuova chat">
-            </div>
-        </div>
-        <div class="chatright">
-
-        </div>
-    </main>
+        </main>
+    </div>
 </body>
+<script src="js/myscript.js"></script>
 </html>
