@@ -32,26 +32,43 @@
                     </div>
                 </div>
                 <div class="search">
-                    <input class="inputSearch" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input v-model="searchTerm" @keyup.enter="filterContacts" class="inputSearch" type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="chats">
                     <div class="standard" v-for="(contact, index) in contacts" :key="index" @click="showChat(index)">
                         <div class="nameMess">
-                            <div class="nameMessLeft">
-                                <img :src="contact.avatar" alt="">
-                                <div class="nameChat">{{contact.name}}</div>
-                                <div class="lastMess">{{getLastMessage(contact)}}</div>
+                            <div class="img">
+                                <img class="contactImg" :src="contact.avatar" alt="">
                             </div>
-                            <div class="nameMessRight">
-                                <span>{{getTimeFromDate(contact.messages[contact.messages.length - 1].date)}}</span>
+                            <div class="info">
+                                <div class="nameMessLeft">
+                                    <div class="nameChat">{{contact.name}}</div>
+                                    <div class="lastMess">{{getLastMessage(contact)}}</div>
+                                </div>
+                                <div class="nameMessRight">
+                                    <span>{{formatTime(contact.messages[contact.messages.length - 1].date)}}</span>
+                                </div>
                             </div>
                         </div>
                       </div>
                 </div>
             </div>
-            <div class="chatright">
-                <div class="profile">
-                    <img  src="" alt="">
+            <div class="chatRight">
+                <div class="profile rad">
+                    <div class="profileRight"></div>
+                    <div class="profileLeft">
+                        <img class="chatIcons" src="img/magnifying-glass-solid.svg" alt="">
+                        <img class="chatIcons" src="img/paperclip-solid.svg" alt="">
+                        <img class="chatIcon" src="img/ellipsis-vertical-solid.svg" alt="">
+                    </div>
+                </div>
+                <div class="chat">
+                    <div class="showChat"></div>
+                    <div class="inputChat">
+                        <img class="chatIcons marg" src="img/face-smile-regular.svg" alt="">
+                        <input class="textChat" type="text" placeholder="Scrivi un messaggio">
+                        <img class="chatIcons marg" src="img/microphone-solid.svg" alt="">
+                    </div>
                 </div>
             </div>
         </main>
