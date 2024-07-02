@@ -1,0 +1,133 @@
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: gainsboro;
+    margin: 0;
+    position: relative;
+}
+
+.backgreen {
+    width: 100%;
+    height: 10rem;
+    background-color: seagreen;
+}
+
+main {
+    position: absolute;
+    display: flex;
+    top: 2rem;
+    right: 5%;
+    width: 90%;
+    height: 40rem;
+    background-color: antiquewhite;
+    border-radius: 5px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 2px);
+    height: 4rem;
+    border-top-left-radius: 5px;
+    background-color: gainsboro;
+    border-right: 2px lightgrey solid;
+}
+
+.chatLeft {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+}
+
+.chatRight {
+    width: 70%;
+    height: 100%;
+}
+
+.imgProfile {
+    width: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.profileLeft {
+    display: flex;
+    align-items: center;
+}
+
+.profileRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatIcons {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+    filter: invert(57%) sepia(8%) saturate(0%) hue-rotate(174deg) brightness(87%) contrast(79%);
+    cursor: pointer;
+}
+
+.chatIcon {
+    width: 20px;
+    height: 25px;
+    margin: 0 8px;
+    filter: invert(57%) sepia(8%) saturate(0%) hue-rotate(174deg) brightness(87%) contrast(79%);
+    cursor: pointer;
+}
+
+.notifications {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    background-color: #8fcce0;
+}
+
+.bell {
+    width: 20px;
+    margin: 0 10px;
+    padding: 13px;
+    background-color: white;
+    clip-path: circle();
+    filter: invert(80%) sepia(34%) saturate(417%) hue-rotate(160deg) brightness(92%) contrast(91%);
+}
+
+.font {
+    font-size: 13px;
+}
+
+.not {
+    color: grey;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    background-color: rgb(219, 219, 219);
+}
+
+.inputSearch {
+    width: 100%;
+    height: calc(3rem - 15px);
+    margin: 15px 10px;
+    color: grey;
+    border-radius: 5px;
+    border: none;
+    padding-left: 35px;
+    background-color: white;
+    background-image: url(../img/magnifying-glass-solid.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 10px;
+    background-size: 15px;
+
+}

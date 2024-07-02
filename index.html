@@ -10,10 +10,39 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
     </script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="js/myscript.js"></script>
     <title>BoolzApp</title>
 </head>
-<body>
-    
+<body id="app">
+    <div class="backgreen"></div>
+    <main>
+        <div class="chatLeft">
+            <div class="profile">
+                <div class="profileLeft">
+                    <img class="imgProfile" src="img/io.jpeg" alt="">
+                    <span>Io</span>
+                </div>
+                <div class="profileRight">
+                    <img class="chatIcons" src="img/circle-notch-solid.svg" alt="">
+                    <img class="chatIcons" src="img/message-regular.svg" alt="">
+                    <img class="chatIcon" src="img/ellipsis-vertical-solid.svg" alt="">
+                </div>
+            </div>
+            <div class="notifications">
+                <img class="bell" src="img/bell-slash-regular.svg" alt="">
+                <div class="font">
+                    Ricevi notifiche di nuovi messaggi <br>
+                    <a class="not" href="">Attiva notifiche desktop</a>
+                </div>
+            </div>
+            <div class="search">
+                <input class="inputSearch" type="text" placeholder="Cerca o inizia una nuova chat">
+            </div>
+        </div>
+        <div class="chatright">
+
+        </div>
+    </main>
 </body>
 </html>
